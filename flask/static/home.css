@@ -1,0 +1,161 @@
+.chat-container {
+    width: 73%;
+    height: 655px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(57, 57, 57);
+    color:white;
+    scrollbar-width: thin;
+    margin-top:1px;
+}
+
+.chat-box {
+    margin-bottom: 5px;
+    height:550px;
+    border: 1px solid rgb(57, 57, 57);
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.user-message {
+    background-color: rgb(57, 57, 57);
+    padding: 5px;
+    margin-bottom: 5px;
+    color:wheat;
+}
+
+.bot-message {
+    background-color: rgb(57, 57, 57);
+    padding: 5px;
+    margin-bottom: 5px;
+    color:white;
+}
+
+input[type="text"] {
+    width: calc(100% - 100px);
+    height: 40px;
+    color:White;
+    background-color: rgb(57, 57, 57) ;
+    border-radius:20px;
+    float:left;
+}
+
+button {
+    width: 80px;
+    height:40px;
+    background-color: rgb(16, 221, 156);
+    border-radius:20px;
+}
+button1 {
+    width: 80px;
+    height:40px;
+    background-color: rgb(16, 221, 156);
+    border-radius:20px;
+}
+.container{
+    width:20%;
+    height:655px;
+    padding:10px;
+    margin-left:10px;
+    margin-top:1px;
+    background-color: black;
+    float: left;
+    border: 1px solid black;
+}
+.container1{
+    width:100%;
+    height:50px;
+    color:white;
+}
+.history_container{
+    width:295px;
+    height:500px;
+    border: 1px solid rgb(57,57,57);
+    color: white;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+.heading1{
+    width:314px;
+    height:50px;
+    float:left;
+    border: 1px solid black;
+    margin-left:10px;
+    background-color:black;
+}
+.heading2{
+    width:1084px;
+    height:50px;
+    float:left;
+    border: 1px solid black;
+    background-color:rgb(57, 57, 57);
+    margin-bottom:0px;
+}
+.user_container{
+    width:293px;
+    height:60px;
+    border: 1px solid black;
+    color:white;
+}
+.tips_container{
+    width:800px;
+    height:350px;
+    border: 1px solid  rgb(57, 57, 57);
+    margin-left:100px;
+    
+}
+.tips_button1{
+    width:300px;
+    height:100px;
+    border: 1px solid #ccc;
+    color:white;
+    margin-left:50px;
+    margin-top:50px;
+    float:left;
+    font-size: 25px;
+    border-radius:20px;
+    background-color:rgb(57, 57, 57);
+}
+.tips_button2{
+    width:300px;
+    height:100px;
+    border: 1px solid #ccc;
+    color:white;
+    margin-left:50px;
+    margin-top:50px;
+    float:left;
+    font-size: 25px;
+    border-radius:20px;
+    background-color:rgb(57, 57, 57);
+}
+.tips_button3{
+    width:300px;
+    height:100px;
+    border: 1px solid #ccc;
+    color:white;
+    margin-left:50px;
+    margin-top:50px;
+    float:left;
+    font-size: 25px;
+    border-radius:20px;
+    background-color:rgb(57, 57, 57);
+}
+.tips_button4{
+    width:300px;
+    height:100px;
+    border: 1px solid #ccc;
+    color:white;
+    margin-left:50px;
+    margin-top:50px;
+    float:left;
+    font-size: 25px;
+    border-radius:20px;
+    background-color:rgb(57, 57, 57);
+}
+.main_container1{
+    width:400px;
+    height:655px;
+    background-color:black;
+}

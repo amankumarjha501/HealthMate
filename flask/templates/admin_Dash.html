@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HealthMate</title>
+    <link rel="icon" href="{{ url_for('static', filename='Screenshot (34).png') }}" type="image/x-icon">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HealthMate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_Dash.css') }}">
+    <script>
+    function resetSession() {
+    fetch('/resetSession', {
+        method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Session reset successful');
+    })
+    .catch(error => {
+        console.error('Error resetting session:', error);
+    });
+}
+    </script>
+
+</head>
+<body style="background-color: black" onload="resetSession()>
+    <div class="container1">
+        <div class="heading1"></div>
+        <div class="heading2">
+            <img src="{{ url_for('static', filename='Screenshot (34).png') }}" alt="HealthMate" style="height:50px;width:50px;float:left">
+            <p style="font-size:20px;float:left;color:white;margin-top:5px">HealthMate</p>
+            <p href="" style="color:white;float:left;margin-left:500px;font-size:20px">Admin's Corner: {{user_email}}</p>
+            <button style="width:100px;color:white;background-color:grey;border: 1px solid rgb(57,57,57);margin-left:5px;margin-top:5px" 
+            id="submit-button" onclick="window.location.href='{{ url_for('logout') }}'">Logout</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="history_container">
+            <form action="{{ url_for('new_chat2') }}" method="post">
+        <button type="submit" class="button" style="background-color:white;width:300px;margin-top:20px">New Chat</button>
+        </form>
+            <button style="width:300px;color:white;background-color:grey;border: 1px solid rgb(57,57,57);margin-top:20px" 
+        id="submit-button" onclick="window.location.href='{{ url_for('signup') }}'">Add User</button>
+        <form action="{{ url_for('admin_signup') }}" method="post">
+            <button type="submit" style="width:300px;color:white;background-color:grey;
+            border: 1px solid rgb(57,57,57);margin-top:20px" 
+            id="submit-button" >Add Admin</button></form>
+        <button style="width:300px;color:white;background-color:grey;border: 1px solid rgb(57,57,57);margin-top:20px" 
+        id="submit-button" onclick="window.location.href='{{ url_for('aboutus') }}'">View About</button>
+        <br>
+        <button style="width:300px;background-color:grey;margin-top:20px;color:white" id="submit-button" 
+        onclick="window.location.href='{{ url_for('view_feedback') }}'">View Feedback</button>
+
+        <br>
+        <button style="width:300px;color:white;background-color:grey;border: 1px solid rgb(57,57,57);margin-top:20px" 
+        id="submit-button" onclick="window.location.href='{{ url_for('userdetails') }}'">View User Details</button>
+        </div>
+        
+        <br><br>
+        <div class="user_container" id="user_name">
+        <div class="user-icon"><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            color="white"
+            fill="currentColor"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+            style="float:left;margin-left:5px">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+            />
+            </svg>
+            <p style="color: WHITE;font-size:25px;margin-left:5px;">&nbsp {{user_name}} </p>
+        </div>
+        </div>
+    </div>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-box" id="chat-box">
+            <center><p style="font-size:50px;font-style:arial">Hi Admin! What Bothers you Today?</p></center>
+            <div class="tips_container">
+                <button class="tips_button1" onclick="sendMessage1(this)" data-query="Suffering from Viral Fever?">
+                <center><br>Suffering from Viral Fever?</center>
+                </button>
+                <button class="tips_button2" onclick="sendMessage1(this)" data-query="Are you COVID Positive?">
+                <center><br>Are you COVID Positive?</center>
+                </button>
+                <button class="tips_button3" onclick="sendMessage1(this)" data-query="Suffering with Glaucoma?">
+                <center><br>Suffering with Glaucoma?</center>
+                </button>
+                <button class="tips_button4" onclick="sendMessage1(this)" data-query="Bird Flu?">
+                <center><br>Bird Flu?</center>
+                </button>
+            </div>
+            <br>
+        </div>
+        <input type="text" id="user-input" placeholder="Type hi/ hello or hey to start........">
+        <button id="submit-button" onclick="sendMessage()">Send</button>
+        <br><br>
+        <center>HealthMate ensures to provide you the best possible help, still there is a chance that we can make mistakes.</center>
+    </div>
+        <div id="error-message">
+            {% with messages = get_flashed_messages(with_categories=true)%}
+            {% if messages%}
+                <ul>
+                    {% for category, message in message %}
+                    <li class="{{category}}">{{message}}</li>
+                    {%endfor%}
+                </ul>
+            {% endif %}
+        
+        {% endwith%}
+        </div>
+    <script src="{{ url_for('static', filename='Dashboard_js.js') }}"></script>
+</body>
+</html>

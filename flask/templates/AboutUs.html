@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthMate</title>
+    <link rel="icon" href="{{ url_for('static', filename='Screenshot (34).png') }}" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #45a089;
+
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        main section {
+            margin-bottom: 2rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: ;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        form {
+            margin-top: 1rem;
+        }
+
+        form label {
+            display: block;
+            margin: 0.5rem 0 0.2rem;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        form input[type="submit"] {
+            /* background-color: #007BFF; */
+            background: #45a089;
+
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+                <!-- <li><a href="contact.html">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome">
+            <h2>Welcome to HealtMate</h2>
+            <p>At HealtMate , we are committed to providing exceptional care to our patients, focusing on comprehensive
+                health and wellness. Our state-of-the-art facilities and experienced medical professionals are dedicated
+                to improving your quality of life through a wide range of medical services.</p>
+        </section>
+
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission is to deliver compassionate, high-quality healthcare that meets the diverse needs of our
+                community. We strive to foster a healing environment that promotes patient-centered care, innovation,
+                and excellence in every aspect of our services.</p>
+        </section>
+
+        <section id="vision">
+            <h2>Our Vision</h2>
+            <p>We envision a healthier community where everyone has access to exceptional healthcare services. We aim to
+                be a leading healthcare provider known for our dedication to patient care, advanced medical practices,
+                and continuous improvement.</p>
+        </section>
+
+        <section id="values">
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Compassion:</strong> We treat each patient with kindness, empathy, and respect.</li>
+                <li><strong>Integrity:</strong> We adhere to the highest standards of professionalism, ethics, and
+                    personal responsibility.</li>
+                <li><strong>Innovation:</strong> We embrace new ideas and technologies to improve our services and
+                    patient outcomes.</li>
+                <li><strong>Excellence:</strong> We are committed to delivering superior healthcare services through
+                    continuous learning and improvement.</li>
+                <li><strong>Community:</strong> We work together to build a healthier community through outreach and
+                    education.</li>
+            </ul>
+        </section>
+
+        <section id="team">
+            <h2>Meet Our Team</h2>
+            <h3>Leadership</h3>
+            <p><strong> Eng. SHOAIB AKHTAR
+                    <br> Eng. FAZLE HUSSAIN
+                    <br> Eng. AMAN KUMAR JHA
+                    <br>Eng. YASH KUMAR
+                    <br> Eng. RAJEEB LOCHAN GHOSH
+                </strong><br>
+                <!-- brings over 20 years of experience in patient care and medical administration. Her dedication to patient safety and clinical excellence has been instrumental in shaping our healthcare facility.</p>
+            - Director of Nursing<br>
+            RAJEEB LOCHAN GHOSH oversees our nursing staff, ensuring that all patients receive the highest standard of care. With his extensive background in clinical nursing and healthcare management, he is a vital part of our leadership team.</p>
+            <h3>Medical Staff</h3>
+            <p>Our team of skilled physicians, nurses, and support staff are here to provide you with the best possible care. Each member of our medical staff is highly trained and dedicated to your health and well-being.</p> -->
+                <!-- <p><a href="team.html">Link to full team bios</a></p> -->
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>We offer a comprehensive range of medical services to meet your health needs, including:</p>
+            <ul>
+                <li>Primary Care</li>
+
+                <li>Rehabilitation</li>
+                <li>Mental Health Services</li>
+            </ul>
+        </section>
+
+        <section id="testimonials">
+            <h2>Patient Testimonials</h2>
+            <blockquote>
+                <p>"The care I received at [Healthcare Facility Name] was outstanding. The staff was attentive and
+                    professional, and they truly cared about my well-being." - John D.</p>
+            </blockquote>
+            <blockquote>
+                <p>"Thanks to the dedicated team HealtMate , I am on the road to recovery. Their expertise and
+                    compassion made all the difference." - Mary P.</p>
+            </blockquote>
+        </section>
+
+        <section id="community">
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>We are here to help you with all your healthcare needs. Please feel free to reach out to us:</p>
+                <ul>
+                    <li><strong>Phone:</strong> 123- 456-7890</li>
+                    <li><strong>Email:</strong>HealthMate@123gmail.com</li>
+                    <li><strong>Address:</strong>HealthMate.com</li>
+                </ul>
+
+            </section>
+
+            <section id="follow-us">
+                <h2>Follow Us</h2>
+                <ul>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.twitter.com">Twitter</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                </ul>
+            </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HealthMate</title>
+        <link rel="icon" href="{{ url_for('static', filename='Screenshot (34).png') }}" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='about us page.css') }}">
+    </head>
+    <body>
+
+        <div class="about-us">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <h3>Welcome to Health Mate</h3>
+                <p>: A Healthcare Chatbot System
+                    Welcome to HealthMate!
+                    HealthMate is an advanced healthcare chatbot system designed to assist individuals in managing their health and obtaining preliminary medical advice. By leveraging state-of-the-art machine learning algorithms and natural language processing, HealthMate provides users with a reliable and accessible platform for health-related inquiries.
+                    <br><br>
+                    Our Mission
+                    Our mission is to bridge the gap between users and professional healthcare services by offering a first point of contact for those seeking medical information and advice. We aim to empower users to take proactive steps towards their health and well-being, ensuring that they have access to essential health information whenever they need it.
+                    <br><br>
+                    How HealthMate Works
+                    HealthMate utilizes a Decision Tree Classifier to analyze user-reported symptoms and predict potential health conditions. By entering symptoms into the chatbot, users receive a list of possible diagnoses along with descriptions and recommended precautionary measures. HealthMate is trained on a comprehensive dataset that includes various symptoms, their severities, and related medical conditions to ensure accurate and actionable recommendations.
+                    <br><br>
+                    Key Features
+                    Symptom Analysis: Users can input their symptoms to receive a list of potential conditions and related advice.
+                    Text-to-Speech: HealthMate can vocalize responses, making it easier for users to understand their condition.
+                    Multilingual Support: With Google Translate integration, HealthMate can communicate with users in multiple languages.
+                    User-Friendly Interface: The chatbot engages users in natural language, recognizing common greetings and maintaining a conversational flow.
+                    Personalized Interaction: HealthMate remembers user details like names and previous interactions for a more personalized experience.
+                    Precautionary Measures: Users receive recommendations on steps to take to manage their health based on their symptoms.
+                    <br><br>Why Choose HealthMate?
+                    HealthMate is designed to be a convenient, accessible, and user-friendly tool for anyone looking to understand their health better. Whether you're experiencing mild symptoms or just seeking general health advice, HealthMate provides timely and accurate information, helping you make informed decisions about your health.
+                    <br><br>
+                    Get Started
+                    Join the HealthMate community today and take the first step towards better health and wellness. Whether you're seeking advice on a specific symptom or looking for general health information, HealthMate is here to help you every step of the way.</p>
+                <a href="#" class="button">Read More &#10145;</a>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='Screenshot (34).png') }}">
+            </div>
+        </div>
+    </body>
+</html>

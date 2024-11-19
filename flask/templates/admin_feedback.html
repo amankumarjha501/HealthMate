@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthMate</title>
+    <link rel="icon" href="{{ url_for('static', filename='Screenshot (34).png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <center><div class="container mt-5">
+        <h1 class="mb-4">Feedback</h1>
+        
+        <table class="table table-bordered" style="border: 1px solid black;width:500px">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Rating</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for feedback in feedback %}
+                    <tr>
+                        <td>&nbsp {{ feedback.id }}</td>
+                        <td>&nbsp {{ feedback.name }}</td>
+                        <td>&nbsp {{ feedback.email }}</td>
+                        <td>&nbsp {{ feedback.rating }}</td>
+                        <td>&nbsp {{ feedback.comments }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div></center>
+</body>
+</html>

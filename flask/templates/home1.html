@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HealthMate</title>
+    <link rel="icon" href="{{ url_for('static', filename='Screenshot (34).png') }}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthMate</title>
+    <script>
+        // Function to reset session on page load
+        function resetSession() {
+            fetch('/resetSession', {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Session reset successful');
+            })
+            .catch(error => {
+                console.error('Error resetting session:', error);
+            });
+        }
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+</head>
+<body style="background-color: black" onload="resetSession()">
+    <div class="container1">
+        <div class="heading1"><form action="{{ url_for('new_chat') }}" method="post">
+        <button type="submit" class="button" style="background-color:white;width:300px">New Chat</button>
+        </form></div>
+        <div class="heading2">
+            <img src="{{ url_for('static', filename='Screenshot (34).png') }}" alt="HealthMate" style="height:50px;width:50px;float:left">
+            <p style="font-size:20px;float:left">HealthMate</p>
+            
+            <form action="{{ url_for('admincorner') }}" method="post">
+            <button type="submit" style="width:150px;color:white;background-color:grey;border: 1px solid rgb(57,57,57);margin-left:730px;margin-top:5px" 
+            id="submit-button" >Admin's Corner</button></form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="history_container">
+            <center><h5 style="color:yellow">About Us</h5></center><br><p>Welcome to HealthMate!<br><br>
+HealthMate is an advanced healthcare chatbot system designed to assist individuals in managing their 
+health and obtaining preliminary medical advice. By leveraging state-of-the-art machine learning 
+algorithms and natural language processing, HealthMate provides users with a reliable and accessible 
+platform for health-related inquiries.</p><br><br><br><p>
+Our Mission<br><br>
+Our mission is to bridge the gap between users and professional healthcare services by offering a 
+first point of contact for those seeking medical information and advice. We aim to empower users to 
+take proactive steps towards their health and well-being, ensuring that they have access to essential
+ health information whenever they need it.</p>
+            <ul id="chat-history">
+                <!-- Chat history will be dynamically populated here -->
+            </ul>
+        </div>
+        <br>
+        <form action="{{ url_for('login') }}" method="post">
+        <button style="width:300px" id="submit-button" type="submit">Login</button>
+        </form>
+        <br>
+        <button style="width:300px;color:white;background-color:black;border: 1px solid rgb(57,57,57)" 
+        id="submit-button" onclick="window.location.href='{{ url_for('signup') }}'">Sign up</button>
+
+        <br><br>
+        <div class="user_container"></div>
+    </div>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-box" id="chat-box">
+            <center><p style="font-size:50px;font-style:arial">Hi! What Bothers you Today?</p></center>
+            <div class="tips_container">
+                <button class="tips_button1" onclick="sendMessage1(this)" data-query="Suffering from Viral Fever?">
+                <center><br>Suffering from Viral Fever?</center>
+                </button>
+                <button class="tips_button2" onclick="sendMessage1(this)" data-query="Are you COVID Positive?">
+                <center><br>Are you COVID Positive?</center>
+                </button>
+                <button class="tips_button3" onclick="sendMessage1(this)" data-query="Suffering with Glaucoma?">
+                <center><br>Suffering with Glaucoma?</center>
+                </button>
+                <button class="tips_button4" onclick="sendMessage1(this)" data-query="Bird Flu?">
+                <center><br>Bird Flu?</center>
+                </button>
+            </div>
+            <br>
+        </div>
+        <input type="text" id="user-input" placeholder="Type hi/ hello or hey to start........" style="overflow-y: scroll;">
+        <button id="submit-button" onclick="sendMessage()">Send</button>
+        <br><br>
+        <center>HealthMate ensures to provide you the best possible help, still there is a chance that we can make mistakes.</center>
+    </div>
+    <div id="error-message">
+            {% with messages = get_flashed_messages(with_categories=true)%}
+                {% if messages%}
+                    <ul>
+                        {% for category, message in message %}
+                        <li class="{{category}}">{{message}}</li>
+                        {%endfor%}
+                    </ul>
+                {% endif %}
+            {% endwith%}
+        </div>
+    <script src="{{ url_for('static', filename='home1.js') }}"></script>
+</body>
+</html>
